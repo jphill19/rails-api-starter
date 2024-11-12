@@ -44,7 +44,6 @@ RSpec.describe "Subscriptions API", type: :request do
         expect(response).to be_successful
         json = JSON.parse(response.body, symbolize_names: true)
 
-        # Verify subscription data
         expect(json[:data][:id]).to eq(@subscription1.id.to_s)
         expect(json[:data][:type]).to eq("subscription")
 
@@ -71,7 +70,7 @@ RSpec.describe "Subscriptions API", type: :request do
         expect(tea_data[:price]).to eq(10.0)
       end
     end
-    
+
     context "when the subscription does not exist" do
       it "returns 404 and an error message" do
         invalid_id = 9999999999999999999999999999999999
@@ -83,6 +82,54 @@ RSpec.describe "Subscriptions API", type: :request do
         expect(json).to have_key(:message)
         expect(json).to have_key(:status)
         expect(json[:message]).to eq("Couldn't find Subscription with 'id'=#{invalid_id}")
+        expect(json[:status]).to eq(404)
+      end
+    end
+  end
+
+  describe "#update action" do
+    context "when request is valid" do
+      it "returns 200 and provides the updated status" do
+        expect(@subscription1.status).to eq("active")
+        patch "/api/v1/subscriptions/#{@subscription1.id}", params: { subscription: { status: "inactive" } }
+
+        expect(response).to be_successful
+        json = JSON.parse(response.body, symbolize_names: true)
+        
+        expect(json[:data][:id]).to eq(@subscription1.id.to_s)
+        expect(json[:data][:type]).to eq("subscription")
+        expect(json[:data][:attributes][:title]).to eq("Monthly Green Tea Subscription")
+        expect(json[:data][:attributes][:status]).to eq("inactive")
+        expect(json[:data][:attributes][:frequency]).to eq("monthly")
+        expect(json[:data][:attributes][:customer_id]).to eq(@customer.id)
+        expect(json[:data][:attributes][:price]).to eq(10.0)
+      end
+    end
+    context "when the subscription does not exist" do
+      it "returns 404 and an error message" do
+        invalid_id = 9999999999999999999999999999999999
+        patch "/api/v1/subscriptions/#{invalid_id}", params: { subscription: { status: "inactive" } }
+
+        expect(response.status).to eq(404)
+        json = JSON.parse(response.body, symbolize_names: true)
+  
+        expect(json).to have_key(:message)
+        expect(json).to have_key(:status)
+        expect(json[:message]).to eq("Couldn't find Subscription with 'id'=#{invalid_id}")
+        expect(json[:status]).to eq(404)
+      end
+    end
+    context "when the subscription status is invalid" do
+      it "returns 404 and an error message" do
+        expect(@subscription1.status).to eq("active")
+        patch "/api/v1/subscriptions/#{@subscription1.id}", params: { subscription: { status: "canceled" } }
+
+        expect(response.status).to eq(404)
+        json = JSON.parse(response.body, symbolize_names: true)
+  
+        expect(json).to have_key(:message)
+        expect(json).to have_key(:status)
+        expect(json[:message]).to eq("Status is not included in the list")
         expect(json[:status]).to eq(404)
       end
     end
