@@ -4,7 +4,7 @@ class Subscription < ApplicationRecord
   has_many :teas, through: :subscriptions_teas
 
   validates :title, presence: true
-  validates :status, presence: true, inclusion: { in: ["active", "inactive", "canceled"] }
+  validates :status, presence: true, inclusion: { in: ["active", "inactive"] }
   validates :frequency, presence: true, inclusion: { in: ["daily", "weekly", "monthly", "yearly"] }
 
 
