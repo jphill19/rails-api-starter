@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spoonacular.com/food/products/search?apiKey=API_KEY&query=tea
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 12 Nov 2024 20:40:59 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Allow-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, UserId, Hash, Name, Password, Accept, User-Agent, Accept-Language,
+        x-api-key, Content-Language, Content-Type, Cache-Control, Origin, X-Requested-With
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, OPTIONS, DELETE, PUT
+      Allow-Control-Allow-Methods:
+      - GET, HEAD, POST, OPTIONS, DELETE, PUT
+      X-Mashape-Billing:
+      - requests=1; results=10
+      X-Api-Quota-Request:
+      - '1.1'
+      X-Api-Quota-Used:
+      - '37.8'
+      X-Api-Quota-Left:
+      - '112.2'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Vary:
+      - accept-encoding
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=QEoSlnSTqR0hZFeEdgAIc1gUgHzYBipQoUphemPRjpPzDmAqHn3UvHieQ%2B1VDa%2FQkB39wle7XL7mNpeW4UYpQQNvs74fCBIusW48bjvYXyCOnmSFg6vVzyj%2B%2Fb2HU71Irbh7Nzk%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e195713d8c1e64d-DEN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Server-Timing:
+      - cfL4;desc="?proto=TCP&rtt=13437&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2806&recv_bytes=828&delivery_rate=252484&cwnd=251&unsent_bytes=0&cid=bfd2388c9b62a46d&ts=1175&x=0"
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ0eXBlIjoicHJvZHVjdCIsInByb2R1Y3RzIjpbeyJpZCI6NDAyNzI2NCwidGl0bGUiOiJUZXJyYVZpdGEgQmx1ZWJlcnJ5IEJhbmFuYSBXaGl0ZSBUZWEsIChCbHVlYmVycnkgQmFuYW5hLExvb3NlIExlYWYgV2hpdGUgVGVhLCA0IG96LCAxLVBhY2ssIFppbjogNTM3OTU0KSIsImltYWdlIjoiaHR0cHM6Ly9pbWcuc3Bvb25hY3VsYXIuY29tL3Byb2R1Y3RzLzQwMjcyNjQtMzEyeDIzMS5qcGVnIiwiaW1hZ2VUeXBlIjoianBlZyJ9LHsiaWQiOjY5Nzg4NTAsInRpdGxlIjoiVHdpbmluZ3MgRnJlbmNoIFZhbmlsbGEgQmxhY2sgQ2hhaSBUZWEgQmFncywgMjAgQ291bnQgKFBhY2sgb2YgNikiLCJpbWFnZSI6Imh0dHBzOi8vaW1nLnNwb29uYWN1bGFyLmNvbS9wcm9kdWN0cy82OTc4ODUwLTMxMngyMzEuanBnIiwiaW1hZ2VUeXBlIjoianBnIn0seyJpZCI6NjI0OTA3LCJ0aXRsZSI6IlRlcnJhVml0YSBQaXN0YWNoaW8gT29sb25nIFRlYSwgUGlzdGFjaGlvLCBPb2xvbmcgVGVhIEJhZ3MsIDUwIFRlYSBCYWdzLCAyLVBhY2ssIFppbjogNTQxNDE0IiwiaW1hZ2UiOiJodHRwczovL2ltZy5zcG9vbmFjdWxhci5jb20vcHJvZHVjdHMvNjI0OTA3LTMxMngyMzEuanBlZyIsImltYWdlVHlwZSI6ImpwZWcifSx7ImlkIjo3MjYzMjcwLCJ0aXRsZSI6IlR3aW5pbmdzIG9mIExvbmRvbiBIb2xpZGF5IFZhcmlldHkgVGVhIEJhZyBQYWNrICBDaHJpc3RtYXMgVGVhIGFuZCBXaW50ZXIgU3BpY2UgIDIwIENvdW50IChQYWNrIG9mIDQpIiwiaW1hZ2UiOiJodHRwczovL2ltZy5zcG9vbmFjdWxhci5jb20vcHJvZHVjdHMvNzI2MzI3MC0zMTJ4MjMxLmpwZyIsImltYWdlVHlwZSI6ImpwZyJ9LHsiaWQiOjU0MDIxMywidGl0bGUiOiJUZXJyYVZpdGEgUGVyc2ltbW9uIEJsYWNrIFRlYSwgUGVyc2ltbW9uLCBMb29zZSBMZWFmIEJsYWNrIFRlYSwgOCBveiwgMi1QYWNrLCBaaW46IDUzMzY5OCIsImltYWdlIjoiaHR0cHM6Ly9pbWcuc3Bvb25hY3VsYXIuY29tL3Byb2R1Y3RzLzU0MDIxMy0zMTJ4MjMxLmpwZWciLCJpbWFnZVR5cGUiOiJqcGVnIn0seyJpZCI6Mzc3NzQwNiwidGl0bGUiOiJOdW1pIE9yZ2FuaWMgVGVhIE1hdGUgTGVtb24sIDE4IENvdW50IChQYWNrIE9mIDYpIEJveCBPZiBUZWEgQmFncyBZZXJiYSBNYXRlIEdyZWVuIFRlYSBCbGVuZCIsImltYWdlIjoiaHR0cHM6Ly9pbWcuc3Bvb25hY3VsYXIuY29tL3Byb2R1Y3RzLzM3Nzc0MDYtMzEyeDIzMS5qcGciLCJpbWFnZVR5cGUiOiJqcGcifSx7ImlkIjo1MzMwMTA4LCJ0aXRsZSI6IlRlcnJhVml0YSBUYXJyYWdvbiBMaW1lIFdoaXRlIFRlYSwgKFRhcnJhZ29uIExpbWUsIFdoaXRlIFRlYSBCYWdzLCA1MCBUZWEgQmFncywgMy1QYWNrLCBaaW46IDU0MTMzOCkiLCJpbWFnZSI6Imh0dHBzOi8vaW1nLnNwb29uYWN1bGFyLmNvbS9wcm9kdWN0cy81MzMwMTA4LTMxMngyMzEuanBlZyIsImltYWdlVHlwZSI6ImpwZWcifSx7ImlkIjo1MTI3NzMsInRpdGxlIjoiUm95YWwgQmVuZ2FsIFRpZ2VyIFRlYSAoTG9vc2UpICg4IG96LCBaaW46IDUxMDI5NykgLSAyLVBhY2siLCJpbWFnZSI6Imh0dHBzOi8vaW1nLnNwb29uYWN1bGFyLmNvbS9wcm9kdWN0cy81MTI3NzMtMzEyeDIzMS5qcGVnIiwiaW1hZ2VUeXBlIjoianBlZyJ9LHsiaWQiOjUyNTY3NjAsInRpdGxlIjoiTHVlSW5Kb3kgWWVsbG93IFBhdSBk4oCZQXJjbyBIZXJiYWwgVGVhLCBDb250cmlidXRlcyB0byBhIEhlYWx0aHkgWW91LCAoUGFjayBvZiAxKSAtIDE2IFRlYSBCYWdzIiwiaW1hZ2UiOiJodHRwczovL2ltZy5zcG9vbmFjdWxhci5jb20vcHJvZHVjdHMvNTI1Njc2MC0zMTJ4MjMxLmpwZWciLCJpbWFnZVR5cGUiOiJqcGVnIn0seyJpZCI6NzM4MjUyNiwidGl0bGUiOiJCY1RseUluYyBIaWJpc2N1cyBUZWEgQmFncywgRmFtaWx5IFNpemUsIFVuc3dlZXRlbmVkLCAxMzIgVGVhIEJhZ3MgLDIyIENvdW50IChQYWNrIG9mIDYpLCBTcGVjaWFsbHkgQmxlbmRlZCBmb3IgSWNlZCBUZWEsIENsZWFyICYgUmVmcmVzaGluZyBIb21lIEJyZXdlZCBTdW1tZXIgUGljbmljIEJldmVyYWdlIiwiaW1hZ2UiOiJodHRwczovL2ltZy5zcG9vbmFjdWxhci5jb20vcHJvZHVjdHMvNzM4MjUyNi0zMTJ4MjMxLmpwZWciLCJpbWFnZVR5cGUiOiJqcGVnIn1dLCJvZmZzZXQiOjAsIm51bWJlciI6MTAsInRvdGFsUHJvZHVjdHMiOjM1MTAyMCwicHJvY2Vzc2luZ1RpbWVNcyI6NzMyfQ==
+  recorded_at: Tue, 12 Nov 2024 20:40:59 GMT
+recorded_with: VCR 6.3.1

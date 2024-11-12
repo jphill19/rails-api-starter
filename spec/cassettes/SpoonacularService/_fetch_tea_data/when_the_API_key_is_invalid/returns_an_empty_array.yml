@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spoonacular.com/food/products/search?apiKey=API_KEY&query=tea
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Tue, 12 Nov 2024 20:41:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Allow-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, UserId, Hash, Name, Password, Accept, User-Agent, Accept-Language,
+        x-api-key, Content-Language, Content-Type, Cache-Control, Origin, X-Requested-With
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, OPTIONS, DELETE, PUT
+      Allow-Control-Allow-Methods:
+      - GET, HEAD, POST, OPTIONS, DELETE, PUT
+      Cf-Cache-Status:
+      - DYNAMIC
+      Vary:
+      - accept-encoding
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=yG9w8Q0elZR0OFEQI5jVEIJgmMw%2FqyeFMMAOf5OA5HYgYM3%2B3e6XKLbiA%2BvuzGY%2BmNqxO0VQ81vFpuvjFIvEg%2FeSJdVfqmRc%2F63h0OEaI1SwfkSkYMxg1TikId0G8sx9AXFXcNA%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e19571bf8261f49-DEN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Server-Timing:
+      - cfL4;desc="?proto=TCP&rtt=10088&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2804&recv_bytes=811&delivery_rate=229313&cwnd=249&unsent_bytes=0&cid=d2f3a4ebf096e6c2&ts=515&x=0"
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"failure", "code":401,"message":"You are not authorized.
+        Please read https://spoonacular.com/food-api/docs#Authentication"}'
+  recorded_at: Tue, 12 Nov 2024 20:40:59 GMT
+recorded_with: VCR 6.3.1

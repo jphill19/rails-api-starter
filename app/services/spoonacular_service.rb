@@ -1,7 +1,3 @@
-# app/services/spoonacular_service.rb
-require 'faraday'
-require 'json'
-
 class SpoonacularService
   BASE_URL = 'https://api.spoonacular.com'
 
@@ -25,7 +21,6 @@ class SpoonacularService
       return JSON.parse(response.body)['price'] || 0.0 
     end
     []
-    end
   end
 
   private
