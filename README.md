@@ -1,4 +1,4 @@
-# Project Name
+# Tea Subscription Service
 
 > A Rails API backend for managing a Tea Subscription Service. This API provides endpoints for retrieving and managing tea subscriptions, including customer subscriptions and cancellations.
 
