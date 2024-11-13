@@ -28,9 +28,12 @@ RSpec.describe "Subscriptions API", type: :request do
           expect(subscription[:id]).not_to be_nil
           expect(subscription[:type]).to eq("subscription")
           expect(subscription[:attributes]).to have_key(:title)
+          expect(subscription[:attributes]).to have_key(:teas_count)
           expect(subscription[:attributes]).to have_key(:status)
           expect(subscription[:attributes]).to have_key(:frequency)
           expect(subscription[:attributes]).to have_key(:price)
+          expect(subscription)
+          
         end
       end
     end

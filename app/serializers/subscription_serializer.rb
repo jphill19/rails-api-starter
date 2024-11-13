@@ -7,10 +7,15 @@ class SubscriptionSerializer
     params[:action] != :show
   }
 
+  attribute :teas_count, if: proc { |record, params| params[:action] == :index } do |subscription|
+    subscription.teas.count
+  end
+
   attribute :price do |subscription|
     subscription.price.to_f
   end
 
+  
   attribute :customer, if: proc { |record, params| params[:action] == :show } do |subscription|
     {
       id: subscription.customer.id,
