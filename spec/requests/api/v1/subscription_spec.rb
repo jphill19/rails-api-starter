@@ -32,7 +32,7 @@ RSpec.describe "Subscriptions API", type: :request do
           expect(subscription[:attributes]).to have_key(:status)
           expect(subscription[:attributes]).to have_key(:frequency)
           expect(subscription[:attributes]).to have_key(:price)
-          expect(subscription)
+          expect(subscription[:attributes]).to have_key(:customer_id)
           
         end
       end
@@ -69,8 +69,13 @@ RSpec.describe "Subscriptions API", type: :request do
         expect(teas.size).to eq(1)
 
         tea_data = teas.first
+ 
+        expect(tea_data[:id]).to eq(@tea1.id)
         expect(tea_data[:title]).to eq("Green Tea")
         expect(tea_data[:price]).to eq(10.0)
+        expect(tea_data[:temperature]).to eq(85)
+        expect(tea_data[:brew_time]).to eq(5)
+        expect(tea_data[:image]).to eq("https://example.com/sample-tea.jpg")
       end
     end
 

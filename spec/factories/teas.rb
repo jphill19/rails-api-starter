@@ -5,5 +5,6 @@ FactoryBot.define do
     temperature { 85 }
     brew_time { 5 }
     price { 10.0 }
+    image { "https://example.com/sample-tea.jpg" }
   end
 end

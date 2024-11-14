@@ -18,9 +18,12 @@ class SpoonacularService
   def fetch_tea_price(tea_id)
     response = @connection.get("/food/products/#{tea_id}", apiKey: @api_key)
     if response.success?
-      return JSON.parse(response.body)['price'] || 0.0 
+      data = JSON.parse(response.body)
+      price = data['price'] || 0.0
+      description = data['description'] || "Description not available"
+      return { price: price, description: description }
     end
-    []
+    { price: 0.0, description: "Description not available" }
   end
 
   private

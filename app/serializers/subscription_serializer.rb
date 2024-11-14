@@ -34,7 +34,8 @@ class SubscriptionSerializer
         description: tea.description,
         price: tea.price.to_f,
         temperature: tea.temperature,
-        brew_time: tea.brew_time
+        brew_time: tea.brew_time,
+        image: tea.image
       }
     end
   end

@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spoonacular.com/food/products/999999999?apiKey=API_KEY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 13 Nov 2024 21:03:34 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Allow-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, UserId, Hash, Name, Password, Accept, User-Agent, Accept-Language,
+        x-api-key, Content-Language, Content-Type, Cache-Control, Origin, X-Requested-With
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, OPTIONS, DELETE, PUT
+      Allow-Control-Allow-Methods:
+      - GET, HEAD, POST, OPTIONS, DELETE, PUT
+      Cf-Cache-Status:
+      - DYNAMIC
+      Vary:
+      - accept-encoding
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=0AitndwhIerXmkerfl3C4PqjH9ZGpv5jXREMZWFAG2WnjIEarkQz81ePXZvCS%2FniD1cAvpxLmIv6qv%2F4rFTYyE2okS4h9SrWgQBdLd%2FQLMMtB4OzbSGhA0x766pR5i8%2B51YYNGI%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e21b58df9dd1f35-DEN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Server-Timing:
+      - cfL4;desc="?proto=TCP&rtt=74640&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2806&recv_bytes=821&delivery_rate=42036&cwnd=248&unsent_bytes=0&cid=8cf08633233de207&ts=641&x=0"
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"failure", "code":400,"message":"The product with the id
+        999999999 does not exist."}'
+  recorded_at: Wed, 13 Nov 2024 21:03:34 GMT
+recorded_with: VCR 6.3.1

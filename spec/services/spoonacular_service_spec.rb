@@ -26,21 +26,28 @@ RSpec.describe SpoonacularService, type: :service do
 
   describe "#fetch_tea_price", :vcr do
     context "when the request is successful" do
-      it "retrieves the price of a specific tea product" do
+      it "retrieves the price and description of a specific tea product" do
         tea_id = 4027264 
-        price = service.fetch_tea_price(tea_id)
+        result = service.fetch_tea_price(tea_id)
 
-        expect(price).to be_a(Float)
-        expect(price).to be >= 0.0
+        expect(result).to be_a(Hash)
+        expect(result).to have_key(:price)
+        expect(result[:price]).to be_a(Float)
+        expect(result[:price]).to be >= 0.0
+
+        expect(result).to have_key(:description)
+        expect(result[:description]).to be_a(String)
       end
     end
 
     context "when the tea ID does not exist" do
-      it "returns 0.0 as the default price" do
+      it "returns a hash with 0.0 as the price and a default description" do
         tea_id = 999999999 
-        price = service.fetch_tea_price(tea_id)
+        result = service.fetch_tea_price(tea_id)
 
-        expect(price).to eq([])
+        expect(result).to be_a(Hash)
+        expect(result[:price]).to eq(0.0)
+        expect(result[:description]).to eq("Description not available")
       end
     end
   end
